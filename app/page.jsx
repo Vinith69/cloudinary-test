@@ -7,6 +7,10 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <CldUploadWidget
           uploadPreset="test-preset"
+          onSuccess={(results) => {
+            console.log("results", results);
+            console.log("Public ID", results.info.public_id);
+          }}
           options={{
             sources: ["local"],
             maxFileSize: 1000000,
